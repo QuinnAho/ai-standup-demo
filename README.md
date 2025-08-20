@@ -1,7 +1,7 @@
 # AI Standup Demo
 
-AI-powered async standups and sprint retros, driven by GitHub activity.  
-This project connects to a GitHub repository, ingests commits, pull requests, and comments, then uses OpenAI to generate:
+AI-powered async standups and sprint retros, driven by GitHub activity.
+This project connects to a GitHub repository, ingests commits, pull requests, and comments, then uses Groq Cloud to generate:
 
 - **Daily Standup Summaries** – condensed updates grouped by contributor, including highlights, inferred next steps, and blockers.  
 - **Sprint Retrospectives** – end-of-sprint reports highlighting wins, friction points, and suggested improvements.
@@ -14,8 +14,8 @@ No meetings required.
 
 - Collects activity from **GitHub commits, PRs, and comments** via webhooks  
 - Stores events in **SQLite** for easy local use  
-- Generates **daily standup summaries** with OpenAI  
-- Generates **retro reports** at the end of a sprint window  
+- Generates **daily standup summaries** with Groq Cloud
+- Generates **retro reports** at the end of a sprint window
 - Posts summaries directly back to GitHub Issues in your repo  
 
 ---
@@ -25,7 +25,7 @@ No meetings required.
 - **Node.js + TypeScript**  
 - **Probot** – GitHub App framework  
 - **SQLite (better-sqlite3)** – lightweight local database  
-- **OpenAI API** – natural language summaries  
+- **Groq Cloud** – natural language summaries (OpenAI-compatible)
 - **Octokit** – post reports to GitHub Issues  
 
 ---
@@ -40,7 +40,11 @@ npm install
 ```
 
 ### 2. Configure
+<<<<<<< HEAD
+Copy `.env.example` to `.env` and fill in your GitHub App, Groq API, and repository details.
+=======
 Copy `.env.example` to `.env` and fill in your GitHub App, OpenAI, and repository details.
+>>>>>>> main
 
 ### 3. Run the server
 ```bash

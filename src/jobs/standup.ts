@@ -1,10 +1,18 @@
 import { db } from "../db";
+<<<<<<< HEAD
+import Groq from "groq-sdk";
+=======
 import { OpenAI } from "openai";
+>>>>>>> main
 import { Octokit } from "@octokit/rest";
 
 const OWNER = process.env.OWNER!;
 const REPO  = process.env.REPO!;
+<<<<<<< HEAD
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+=======
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+>>>>>>> main
 
 function since(hours: number) {
   return new Date(Date.now() - hours*3600*1000).toISOString();
@@ -40,8 +48,13 @@ const qComments = db.prepare(`
 Keep it under 250 words. Include helpful links.`;
   const user = JSON.stringify(payload).slice(0, 120_000); // safety cap
 
+<<<<<<< HEAD
+  const resp = await groq.chat.completions.create({
+    model: "llama3-70b-8192",
+=======
   const resp = await openai.chat.completions.create({
     model: "gpt-4o-mini",
+>>>>>>> main
     temperature: 0.2,
     messages: [{ role: "system", content: sys }, { role: "user", content: user }]
   });

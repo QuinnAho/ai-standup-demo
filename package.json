@@ -1,0 +1,31 @@
+{
+  "name": "ai-standup-demo",
+  "version": "1.0.0",
+  "description": "AI-powered async standups and sprint retros, driven by GitHub activity.",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "standup:now": "ts-node src/jobs/standup.ts",
+    "retro:now": "ts-node src/jobs/retro.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "probot": "*",
+    "fastify": "*",
+    "better-sqlite3": "*",
+    "node-cron": "*",
+    "openai": "*",
+    "zod": "*",
+    "@octokit/rest": "*"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "ts-node": "*",
+    "@types/node": "*",
+    "nodemon": "*"
+  },
+  "license": "ISC"
+}

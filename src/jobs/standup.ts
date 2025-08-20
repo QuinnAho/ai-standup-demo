@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { db } from "../db";
 import Groq from "groq-sdk";
 import { Octokit } from "@octokit/rest";

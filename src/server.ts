@@ -1,7 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { Probot } from "probot";
 import Fastify from "fastify";
 import { db } from "./db";
-import * as process from "node:process";
 import cron from "node-cron";
 import { exec } from "child_process";
 

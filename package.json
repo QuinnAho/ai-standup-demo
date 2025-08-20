@@ -19,7 +19,8 @@
     "groq-sdk": "*",
     "node-cron": "*",
     "probot": "*",
-    "zod": "*"
+    "zod": "*",
+    "dotenv": "*"
   },
   "devDependencies": {
     "@types/node": "*",

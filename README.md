@@ -40,7 +40,11 @@ npm install
 ```
 
 ### 2. Configure
+<<<<<<< HEAD
 Copy `.env.example` to `.env` and fill in your GitHub App, Groq API, and repository details.
+=======
+Copy `.env.example` to `.env` and fill in your GitHub App, OpenAI, and repository details.
+>>>>>>> main
 
 ### 3. Run the server
 ```bash

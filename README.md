@@ -37,3 +37,18 @@ No meetings required.
 git clone https://github.com/<your-username>/ai-standup-demo.git
 cd ai-standup-demo
 npm install
+```
+
+### 2. Configure
+Copy `.env.example` to `.env` and fill in your GitHub App, OpenAI, and repository details.
+
+### 3. Run the server
+```bash
+npm run dev
+```
+
+### 4. Run jobs manually
+```bash
+npm run standup:now
+npm run retro:now
+```

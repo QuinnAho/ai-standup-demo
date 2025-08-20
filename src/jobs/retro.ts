@@ -1,19 +1,11 @@
 import { db } from "../db";
-<<<<<<< HEAD
 import Groq from "groq-sdk";
-=======
-import { OpenAI } from "openai";
->>>>>>> main
 import { Octokit } from "@octokit/rest";
 
 const OWNER = process.env.OWNER!;
 const REPO  = process.env.REPO!;
 const DAYS  = Number(process.env.SPRINT_DAYS || 14);
-<<<<<<< HEAD
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-=======
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
->>>>>>> main
 const gh = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 function isoDaysAgo(d:number){ return new Date(Date.now()-d*864e5).toISOString(); }
@@ -53,13 +45,8 @@ Create:
 Use the JSON; be concrete.`;
   const user = JSON.stringify(payload).slice(0, 120_000);
 
-<<<<<<< HEAD
   const resp = await groq.chat.completions.create({
     model: "llama3-70b-8192",
-=======
-  const resp = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
->>>>>>> main
     temperature: 0.2,
     messages: [{ role: "system", content: sys }, { role: "user", content: user }]
   });

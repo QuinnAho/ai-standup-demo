@@ -11,9 +11,7 @@ const fastify = Fastify();
 const app = new Probot({
   appId: Number(process.env.APP_ID),
   privateKey: process.env.PRIVATE_KEY!,
-  webhooks: {
-    secret: process.env.WEBHOOK_SECRET!,
-  },
+  secret: process.env.WEBHOOK_SECRET!,
 });
 
 // Ingest helpers
